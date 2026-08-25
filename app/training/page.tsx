@@ -44,7 +44,7 @@ export default function TrainingPage() {
       ========================================================= */}
       <section className="relative min-h-[650px] overflow-hidden border-b border-border/60 flex items-center">
         <SectionBackground
-          src="/images/backgrounds/bg-4.jpeg"
+          src="/images/backgrounds/bg-training.jpg"
           alt="Mechanical Engineering Training"
           priority
           overlayClassName="bg-gradient-to-r from-background via-background/95 to-background/35"
