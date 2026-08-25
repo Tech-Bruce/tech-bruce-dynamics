@@ -2,8 +2,8 @@ import { LucideIcon, PenTool, FileSearch, Ruler, Settings, Cpu, Layers, Workflow
 
 export const COMPANY_NAME = "TechBruce Dynamics";
 export const COMPANY_TAGLINE = "Engineering Solutions | Simulation | Die Design";
-export const CONTACT_EMAIL = "info@techbrucedynamics.com";
-export const CONTACT_PHONE = "+91 XXXXX XXXXX";
+export const CONTACT_EMAIL = "techbrucedynamics@gmail.com";
+export const CONTACT_PHONE = "+91 9944553539";
 export const CONTACT_LOCATION = "Tamil Nadu, India";
 
 export const NAVIGATION_LINKS = [
