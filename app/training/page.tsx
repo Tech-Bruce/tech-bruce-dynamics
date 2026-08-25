@@ -20,7 +20,10 @@ import {
   Settings,
   Layers,
   Cpu,
-  Check
+  Check,
+  Route,
+  Wrench,
+  Users
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -35,6 +38,45 @@ const COURSE_ICONS: Record<string, any> = {
   autocad: MonitorPlay,
   simulation: Cpu,
 };
+
+const RECOMMENDED_FLOW = [
+  {
+    step: "01",
+    title: "Degree & Eligibility",
+    description: "Understand the required educational background, qualifications, and entry requirements.",
+    icon: GraduationCap,
+  },
+  {
+    step: "02",
+    title: "Career Path",
+    description: "Explore suitable career roles, growth opportunities, and possible career progression.",
+    icon: Route,
+  },
+  {
+    step: "03",
+    title: "Required Skills",
+    description: "Identify the technical, engineering, and soft skills needed for the selected career.",
+    icon: Wrench,
+  },
+  {
+    step: "04",
+    title: "Software & Tools",
+    description: "Learn the industry-standard software and tools required for the role.",
+    icon: Settings,
+  },
+  {
+    step: "05",
+    title: "Interview Preparation",
+    description: "Prepare with technical questions, HR questions, projects, resume guidance, and mock interviews.",
+    icon: Users,
+  },
+  {
+    step: "06",
+    title: "Jobs & Placement",
+    description: "Explore relevant job opportunities and get guidance on applying and starting your career.",
+    icon: Briefcase,
+  },
+];
 
 export default function TrainingPage() {
   return (
@@ -139,6 +181,56 @@ export default function TrainingPage() {
             <span className="h-px w-12 bg-border" />
             <span>01 / 01</span>
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          RECOMMENDED WEBSITE FLOW
+      ========================================================= */}
+      <section className="relative overflow-hidden border-b border-border bg-background py-24 lg:py-32">
+        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
+                Your Journey
+              </span>
+              <span className="h-px w-12 bg-primary/50" />
+            </div>
+            <h2 className="text-4xl font-extrabold tracking-[-0.045em] sm:text-5xl">
+              Recommended
+              <br />
+              <span className="text-muted-foreground">Website Flow.</span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
+              Follow this step-by-step path to explore career opportunities and build the necessary skills to succeed in the manufacturing sector.
+            </p>
+          </div>
+
+          <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {RECOMMENDED_FLOW.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <FadeIn key={item.step} direction="up" delay={0.08 * index}>
+                  <div className="group relative flex h-full flex-col bg-muted/20 p-8 transition-all duration-300 hover:bg-muted/40 border border-border/50">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center bg-background border border-border text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="mb-2 flex items-center gap-3">
+                      <span className="font-mono text-[10px] font-bold text-muted-foreground/60">
+                        {item.step}
+                      </span>
+                      <h3 className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="text-sm font-medium leading-relaxed text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </StaggerContainer>
         </div>
       </section>
 
