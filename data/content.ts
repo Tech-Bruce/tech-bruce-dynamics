@@ -15,7 +15,6 @@ export const NAVIGATION_LINKS = [
   { name: "Die Design", href: "/die-design" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Training", href: "/training" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export interface Service {
