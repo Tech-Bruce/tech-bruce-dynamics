@@ -13,6 +13,7 @@ export const NAVIGATION_LINKS = [
   { name: "Capabilities", href: "/capabilities" },
   { name: "Materials", href: "/materials" },
   { name: "Die Design", href: "/die-design" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Training", href: "/training" },
   { name: "Contact", href: "/contact" },
 ];
@@ -27,17 +28,17 @@ export interface Service {
 
 export const SERVICES: Service[] = [
   {
-  id: "process-planning",
-  title: "Process Planning",
-  description: "Develop and optimize manufacturing processes by defining forming sequences, process parameters, and tooling strategies to achieve efficient production and consistent part quality.",
-  icon: Workflow,
-  features: [
-    "Process sequence planning",
-    "Tooling & operation planning",
-    "Process parameter optimization",
-    "Manufacturing feasibility analysis"
-  ]
-},
+    id: "process-planning",
+    title: "Process Planning",
+    description: "Develop and optimize manufacturing processes by defining forming sequences, process parameters, and tooling strategies to achieve efficient production and consistent part quality.",
+    icon: Workflow,
+    features: [
+      "Process sequence planning",
+      "Tooling & operation planning",
+      "Process parameter optimization",
+      "Manufacturing feasibility analysis"
+    ]
+  },
   {
     id: "stamping-simulation",
     title: "Sheet Metal Stamping Simulation",
@@ -46,17 +47,17 @@ export const SERVICES: Service[] = [
     features: ["Formability analysis", "Defect prediction", "Process parameter optimization", "Springback assessment"]
   },
   {
-  id: "formability-springback-analysis",
-  title: "Formability & Springback Analysis",
-  description: "Evaluate material formability, predict springback behavior, and identify forming limitations to optimize the process and ensure final part geometry meets precise specifications.",
-  icon: FileSearch,
-  features: [
-    "Forming limit & material evaluation",
-    "FLD and springback prediction",
-    "Risk identification & geometry compensation",
-    "Process optimization"
-  ]
-},
+    id: "formability-springback-analysis",
+    title: "Formability & Springback Analysis",
+    description: "Evaluate material formability, predict springback behavior, and identify forming limitations to optimize the process and ensure final part geometry meets precise specifications.",
+    icon: FileSearch,
+    features: [
+      "Forming limit & material evaluation",
+      "FLD and springback prediction",
+      "Risk identification & geometry compensation",
+      "Process optimization"
+    ]
+  },
   {
     id: "die-design",
     title: "Precision Die Design",
@@ -78,8 +79,8 @@ export const SERVICES: Service[] = [
     icon: Settings,
     features: ["Reliable production engineering", "Optimized tool life", "High-volume compatibility"]
   },
-  
- 
+
+
 ];
 
 export const CAPABILITIES = [

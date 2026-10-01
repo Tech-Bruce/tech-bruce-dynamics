@@ -6,46 +6,93 @@ import { FadeIn, StaggerContainer } from "@/components/ui/FadeIn";
 import { SERVICES, COMPANY_NAME } from "@/data/content";
 import { ArrowRight, CheckCircle2, Factory, MonitorPlay, Ruler, Wrench } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-32 lg:pt-44 lg:pb-40">
-        <SectionBackground
-          src="/images/backgrounds/bg-1.jpeg"
-          alt="Precision Engineering Background"
-          priority
-          overlayClassName="bg-gradient-to-r from-background via-background/95 to-background/40"
-        />
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover z-0"
+        >
+          <source src="https://res.cloudinary.com/qje03hi5/video/upload/v1790833560/15452141_1920_1080_60fps.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-background/60 z-0 backdrop-blur-sm" />
+
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <FadeIn className="max-w-3xl" direction="up">
-            <p className="mb-6 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] text-primary">
-              <span className="h-px w-12 bg-primary" />
-              {COMPANY_NAME}
-            </p>
-            <h1 className="mb-8 text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              Precision Engineering for{" "}
-              <span className="text-primary">Sheet Metal Tooling</span>
-            </h1>
-            <p className="mb-10 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl">
-              Specialized engineering solutions in sheet metal stamping simulation, progressive die design, strip layout development, formability analysis, and manufacturing feasibility.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Button href="/contact" size="lg" className="h-14 rounded-sm px-10 text-base">
-                Discuss Your Project
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button
-                href="/services"
-                variant="outline"
-                size="lg"
-                className="h-14 rounded-sm bg-background/50 px-10 text-base backdrop-blur-md"
-              >
-                Explore Services
-              </Button>
-            </div>
-          </FadeIn>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <FadeIn className="max-w-3xl" direction="up">
+              <p className="mb-6 flex items-center gap-4 text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                <span className="h-px w-12 bg-primary" />
+                {COMPANY_NAME}
+              </p>
+              <h1 className="mb-8 text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+                Precision Engineering for{" "}
+                <span className="text-primary">Sheet Metal Tooling</span>
+              </h1>
+              <p className="mb-10 max-w-2xl text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl">
+                Specialized engineering solutions in sheet metal stamping simulation, progressive die design, strip layout development, formability analysis, and manufacturing feasibility.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Button href="/contact" size="lg" className="h-14 rounded-sm px-10 text-base">
+                  Discuss Your Project
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+                <Button
+                  href="/services"
+                  variant="outline"
+                  size="lg"
+                  className="h-14 rounded-sm bg-background/50 px-10 text-base backdrop-blur-md"
+                >
+                  Explore Services
+                </Button>
+              </div>
+            </FadeIn>
+
+            <FadeIn className="relative lg:pl-10" direction="left">
+              <Link href="/portfolio" className="group block relative">
+                <div className="relative mx-auto aspect-square w-full max-w-md lg:max-w-lg mt-8 lg:mt-0">
+                  <div className="absolute bottom-4 left-4 z-10 w-[65%] -rotate-[10deg] rounded-xl   shadow-2xl transition-all duration-500 group-hover:-translate-y-4 group-hover:-translate-x-4 group-hover:-rotate-[14deg]">
+                    <div className="overflow-hidden rounded-lg bg-muted/20">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="aspect-[3/4] w-full object-cover"
+                      >
+                        <source src="https://res.cloudinary.com/qje03hi5/video/upload/v1790772703/D_Pillar_Inner_Presentation.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 right-4 w-[65%] rotate-[10deg] rounded-xl  shadow-xl transition-all duration-500 group-hover:translate-y-4 group-hover:translate-x-4 group-hover:rotate-[14deg]">
+                    <div className="overflow-hidden rounded-lg bg-muted/20">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="aspect-[3/4] w-full object-cover"
+                      >
+                        <source src="https://res.cloudinary.com/qje03hi5/video/upload/v1790773002/STAY_ASSY_FR_SUSP_MBR_LH_Presentation.mp4" type="video/mp4" />
+
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 flex items-center justify-center gap-2 text-lg font-bold text-primary transition-all duration-300 group-hover:translate-x-2">
+                  View Our Projects <ArrowRight className="h-5 w-5" />
+                </div>
+
+              </Link>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
