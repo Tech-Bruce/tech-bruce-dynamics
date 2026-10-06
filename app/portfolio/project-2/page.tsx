@@ -22,7 +22,7 @@ export default function Project2Presentation() {
             </Link>
           </div>
           
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Video & Details */}
             <div className="lg:col-span-8 bg-card border border-border/50 rounded-xl overflow-hidden shadow-xl flex flex-col">
             <div className="aspect-video bg-black relative">
@@ -48,7 +48,7 @@ export default function Project2Presentation() {
             </div>
 
             {/* Right Column: PDF Report */}
-            <div className="lg:col-span-4 bg-card border border-border/50 rounded-xl overflow-hidden shadow-xl h-[600px] lg:h-auto min-h-[600px]">
+            <div className="lg:col-span-4 bg-card border border-border/50 rounded-xl overflow-hidden shadow-xl h-[600px] lg:h-[800px] flex flex-col">
               <PDFViewer url="/Report_D-Pillar%20Lower%20–%20Rear%20Corner.pdf" />
             </div>
           </div>
