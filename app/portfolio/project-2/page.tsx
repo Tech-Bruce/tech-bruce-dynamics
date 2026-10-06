@@ -2,6 +2,12 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const PDFViewer = dynamic(() => import("@/components/ui/PDFViewer").then(mod => mod.PDFViewer), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full min-h-[600px] flex items-center justify-center bg-muted/20">Loading PDF...</div>
+});
 
 export const metadata: Metadata = {
   title: "D Pillar Inner Presentation | Portfolio",
@@ -41,18 +47,14 @@ export default function Project2Presentation() {
               </h1>
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
                 Full video presentation showcasing the detailed progression and engineering process for the D Pillar Inner. 
-                Highlights include comprehensive formability analysis and precision die design.
+                Highlights include comprehensive formability analysis.
               </p>
             </div>
             </div>
 
             {/* Right Column: PDF Report */}
             <div className="lg:col-span-4 bg-card border border-border/50 rounded-xl overflow-hidden shadow-xl h-[600px] lg:h-auto min-h-[600px]">
-              <iframe 
-                src="/Report_D-Pillar%20Lower%20–%20Rear%20Corner.pdf" 
-                className="w-full h-full border-0"
-                title="Project Report"
-              />
+              <PDFViewer url="/Report_D-Pillar%20Lower%20–%20Rear%20Corner.pdf" />
             </div>
           </div>
         </FadeIn>

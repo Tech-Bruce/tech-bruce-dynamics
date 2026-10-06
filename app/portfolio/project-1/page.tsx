@@ -2,6 +2,12 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const PDFViewer = dynamic(() => import("@/components/ui/PDFViewer").then(mod => mod.PDFViewer), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full min-h-[600px] flex items-center justify-center bg-muted/20">Loading PDF...</div>
+});
 
 export const metadata: Metadata = {
   title: "Project Presentation | Portfolio",
@@ -48,11 +54,7 @@ export default function ProjectPresentation() {
 
             {/* Right Column: PDF Report */}
             <div className="lg:col-span-4 bg-card border border-border/50 rounded-xl overflow-hidden shadow-xl h-[600px] lg:h-auto min-h-[600px]">
-              <iframe 
-                src="/Report_Stay%20Assembly%20Front%20Suspension%20Member.pdf" 
-                className="w-full h-full border-0"
-                title="Project Report"
-              />
+              <PDFViewer url="/Report_Stay%20Assembly%20Front%20Suspension%20Member.pdf" />
             </div>
           </div>
         </FadeIn>
